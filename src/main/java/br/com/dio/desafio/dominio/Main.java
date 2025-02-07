@@ -24,9 +24,45 @@ public class Main {
         mentoria2.setDescricao("Aprenda os conceitos avançados de Java");
         mentoria2.setData(LocalDate.now());
 
-        System.out.println(curso);
+        /*System.out.println(curso);
         System.out.println(curso2);
         System.out.println(mentoria);
-        System.out.println(mentoria2);
+        System.out.println(mentoria2);*/
+
+        BootCanp bootcamp = new BootCanp();
+        bootcamp.setNome("GFT START #2 Java");
+        bootcamp.setDescricao("Bootcamp para formação de desenvolvedores Java");
+        bootcamp.getConteudos().add(curso);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev dev = new Dev();
+        dev.setNome("Lucas");
+        dev.inscreverBootcamp(bootcamp);
+        System.out.println("\nConteúdos inscritos Lucas: " + dev.getConteudosInscritos());
+        dev.progredir();
+        dev.progredir();
+        dev.progredir();
+        System.out.println("\n");
+        System.out.println("Conteúdos inscritos Lucas: " + dev.getConteudosInscritos());
+        System.out.println("Conteúdos concluídos Lucas: " + dev.getConteudosConcluidos());
+        System.out.println("XP: " + dev.calcularTotalXp());
+
+        System.out.println("\n-------\n");
+
+        Dev dev2 = new Dev();
+        dev2.setNome("João");
+        dev2.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos João: " + dev2.getConteudosInscritos());
+        dev2.progredir();
+        dev2.progredir();
+        dev2.progredir();
+        System.out.println("\n");
+        System.out.println("Conteúdos inscritos João: " + dev2.getConteudosInscritos());
+        System.out.println("Conteúdos concluídos João: " + dev2.getConteudosConcluidos());
+        System.out.println("XP: " + dev2.calcularTotalXp());
+
+
+
     }
 }
